@@ -71,6 +71,21 @@
                     </ul>
                 </li>
 
+                                <!-- Inventory submenu -->
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link" href="#" data-toggle="collapse" data-target="#quotationSubmenu" aria-expanded="false">
+                                        <span><i class="fas fa-warehouse"></i></span>
+                                        <span class="hide-menu">Quotation</span>
+                                    </a>
+                                    <ul id="quotationSubmenu" class="collapse sidebar-submenu">
+                                        <li class="sidebar-item">
+                                            <a class="sidebar-link" href="/quotation" aria-expanded="false">
+                                                <span class="hide-menu">Quotation</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
             <!-- Other menu items -->
             <li class="sidebar-item">
                 <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
@@ -81,33 +96,37 @@
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="#" data-toggle="collapse" data-target="#supplier" aria-expanded="false">
-                    <span><i class="fas fa-file-invoice"></i></span>
+                <a class="sidebar-link" href="#supplier" aria-expanded="false" data-toggle="collapse" data-target="#supplier" aria-controls="supplier">
+                    <span>
+                        <i class="fas fa-file-invoice"></i>
+                    </span>
                     <span class="hide-menu">Supplier</span>
                 </a>
                 <ul id="supplier" class="collapse sidebar-submenu">
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ url('sup_products') }}" aria-expanded="false">
+                        <a class="sidebar-link" href="{{url('sup_products')}}" aria-expanded="false">
                             <span class="hide-menu">Products</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ url('a') }}" aria-expanded="false">
+                        <a class="sidebar-link" href="{{url('sup_purchase')}}" aria-expanded="false">
                             <span class="hide-menu">Purchase Insert</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ url('a') }}" aria-expanded="false">
+                        <a class="sidebar-link" href="{{url('a')}}" aria-expanded="false">
                             <span class="hide-menu">Purchase Return</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{ url('a') }}" aria-expanded="false">
+                        <a class="sidebar-link" href="{{url('a')}}" aria-expanded="false">
                             <span class="hide-menu">Billing Management</span>
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li>
+
+
             <li class="sidebar-item">
                 <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
                     <span>

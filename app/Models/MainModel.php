@@ -93,5 +93,19 @@ class MainModel extends Model
         $result = DB::table($tableName)->latest($where)->first();
         return $result;
     }
+    // for custom use contact person name
+
+    public function getDatasWhere_distinct($tableName, $where, $columns)
+    {
+        $data = DB::table($tableName)->where($where)->groupBy($columns)->get();
+        return $data;
+    }
+
+
+
 }
+
+
+
+
 ?>

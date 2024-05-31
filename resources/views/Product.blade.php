@@ -138,31 +138,14 @@
     </div>
   </div>
 
-  <script>
-    document.getElementById('image').addEventListener('change', function(event) {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = document.getElementById('imagePreview');
-                img.src = e.target.result;
-                img.style.display = 'block';
-            };
-            reader.readAsDataURL(file);
-        } else {
-            const img = document.getElementById('imagePreview');
-            img.style.display = 'none';
-            img.src = '#';
-        }
-    });
-  </script>
 
+
+
+  @include('layout/script')
   <script>
     $(document).ready(function() {
         $('.select2').select2();
     });
   </script>
-
-  @include('layout/script')
 </body>
 </html>

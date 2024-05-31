@@ -43,6 +43,11 @@
           border: 10px;
       }
 
-
+/* CSS for smaller input fields */
+.small-input {
+    width: 80px; /* Adjust width as needed */
+    padding: 2px; /* Adjust padding as needed */
+    font-size: 12px; /* Adjust font size as needed */
+}
     </style>
   </head>

@@ -28,7 +28,7 @@
                                 @endif
                             </div>
                             <div class="col-md-6 text-right" style="width: -webkit-fill-available;">
-                                <a href="{{route('sup_product_cr')}}" class="btn btn-dark py-8 fs-4 mb-4 rounded-2" style="float: right;">Create New Product</a>
+                                <a href="{{route('sup_purchase_cr')}}" class="btn btn-dark py-8 fs-4 mb-4 rounded-2" style="float: right;">Purchase New Product</a>
                             </div>
                         </div>
                         <div class="table-responsive">
@@ -36,40 +36,34 @@
                                 <thead>
                                     <tr>
                                         <th>S.NO</th>
+                                        <th>Invoice</th>
                                         <th>Product Name</th>
-                                        <th>Product Category</th>
-                                        <th>Branch</th>
+                                        <th>Qty</th>
                                         <th>Product Image</th>
                                         <th>Stock</th>
                                         <th>MRP</th>
                                         <th>Sale</th>
                                         <th>Expiry Date</th>
+                                        <th>Grand Total</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $i=1; ?>
                                     @foreach ($datas as $data)
-                                        <tr>
-                                            <td>{{$i++}}</td>
-                                            <td>{{$data->pr_name}}</td>
-                                            <td>{{$data->pr_cat}}</td>
-                                            <td>{{$data->branch}}</td>
-                                            <td><img src="{{asset($data->pr_img)}}" alt="img" width="50px"></td>
-                                            <td>{{$data->stock}}</td>
-                                            <td>{{$data->mrp}}</td>
-                                            <td>{{$data->sale}}</td>
-                                            <td>{{$data->exp_date}}</td>
-                                            <td>
-                                                <a href="{{route('sup_pr_edit',['id'=>$data->id])}}" class="btn btn-sm btn-primary" title="Edit"><i
-                                                        class="fas fa-edit"></i></a>
-                                                <a href="{{route('sup_pr_dlt',['id'=>$data->id])}}" class="btn btn-sm btn-danger" title="Delete"><i
-                                                        class="fas fa-trash"></i></a>
-                                                <a href="{{route('sup_pr_view',['id'=>$data->id])}}" class="btn btn-sm btn-success" title="View"><i 
-                                                        class="fas fa-eye"></i></a>
-                                            </td>
-                                        </tr>
-                                        <?php $i++ ?>
+                                    <tr>
+                                        <td>{{$i}}</td>
+                                        <td>{{$data->invoice}}</td>
+                                        <td>{{$data->pr_name}}</td>
+                                        <td>{{$data->quantity}}</td>
+                                        <td><img src="{{$data->pr_img}}" alt="img" width="50px"></td>
+                                        <td>{{$data->stock}}</td>
+                                        <td>{{$data->mrp}}</td>
+                                        <td>{{$data->sale}}</td>
+                                        <td>{{$data->exp_date}}</td>
+                                        <td>{{$data->grandTotal_v}}</td>
+                                    </tr>
+                                    <?php $i++; ?>
                                     @endforeach
                                 </tbody>
                             </table>

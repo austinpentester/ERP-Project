@@ -7,6 +7,7 @@ use App\Http\Controllers\PartyController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\QuotationController;
 
 
 /*
@@ -281,3 +282,31 @@ Route::post('/Editproducts', [ProductController::class, 'update'])->name('produc
 Route::post('branch_ins',[MainController::class,'branch_ins'])->name('branch_ins');
 
 Route::match(['get','post'],'company_details_view/{id}',[MainController::class,'company_details_view'])->name('company_details_view');
+
+
+// Supplier
+// supllier products
+Route::get('sup_products',[SupplierController::class,'sup_products']);
+Route::get('sup_product_cr',[SupplierController::class,'sup_product_cr'])->name('sup_product_cr');
+Route::post('sup_product_ins',[SupplierController::class,'sup_product_ins'])->name('sup_product_ins');
+Route::match(['get','post'],'sup_pr_edit/{id}',[SupplierController::class,'sup_pr_edit'])->name('sup_pr_edit');
+Route::match(['get','post'],'sup_product_upd/{id}',[SupplierController::class,'sup_product_upd'])->name('sup_product_upd');
+Route::match(['get','post'],'sup_pr_dlt/{id}',[SupplierController::class,'sup_pr_dlt'])->name('sup_pr_dlt');
+Route::match(['get','post'],'sup_pr_view/{id}',[SupplierController::class,'sup_pr_view'])->name('sup_pr_view');
+// purchase
+Route::get('sup_purchase',[SupplierController::class,'sup_purchase']);
+Route::get('sup_purchase_cr',[SupplierController::class,'sup_purchase_cr'])->name('sup_purchase_cr');
+Route::match(['get','post'],'sup_prd_dts_ajx',[SupplierController::class,'sup_prd_dts_ajx'])->name('sup_prd_dts_ajx');
+Route::match(['get','post'],'sup_purchase_ins',[SupplierController::class,'sup_purchase_ins'])->name('sup_purchase_ins');
+
+
+
+//Quotation
+
+Route::get('/quotation',[QuotationController::class,'quotation']);
+Route::post('/getcontactpersons', [QuotationController::class, 'getContactPersons'])->name('getContactPersons');
+Route::post('/getproductDetails', [QuotationController::class, 'getproductDetails'])->name('getproductDetails');
+Route::post('/quotation/store', [QuotationController::class, 'store'])->name('quotation.store');
+Route::get('/T_quotation',[QuotationController::class,'T_quotation'])->name('quotation.index');
+
+
